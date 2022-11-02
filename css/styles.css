@@ -134,6 +134,12 @@ body{
 		overflow: hidden;
 		display: none;
 	}
+
+	.santa{
+	   	position: absolute;
+		overflow: hidden;
+		display: none; 
+	}
 }
 
 @media (max-width: 375px){
