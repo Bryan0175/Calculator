@@ -1,0 +1,145 @@
+:root{
+	--bg-body:#edf1f4;
+	--bg-calc: transparent;
+	--bgdark-calc: #33393e;
+	--color-btn: #888;
+	--calc-box-shadow: 15px 15px 20px rgba(0, 0, 0, .1),
+	-15px -15px 20px #fffb;
+	--calc-btn-shadow: 5px 5px 5px rgba(0, 0, 0, .1),
+	-5px -5px 10px #fff;
+	--value-shadow: inset 5px 5px 10px rgba(0, 0, 0, .1),
+	-5px -5px 20px #fff;
+	--toggle-shadow: 5px 5px 10px rgba(0, 0, 0, .1),
+	-5px -5px 10px #fff;
+}
+
+/* color-pastel: #fee1f2 */
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	/*background: var(--bg-body);*/
+	background: linear-gradient(#0c1d38,#1a3158);
+	overflow: hidden;
+}
+
+.calculator{
+	right: 23rem;
+	z-index: 7;
+	position: relative;
+	width: auto;
+	padding: 20px;
+	border-radius: 20px;
+	box-shadow: var(--calc-box-shadow);
+	background: #e2fbff;
+}
+
+.dark .calculator{
+	right: 0rem;
+}
+
+.calculator .buttons > *{
+	z-index: 9;
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.calculator .buttons h2#value{
+	z-index: 9;
+	position: relative;
+	user-select: none;
+	overflow: none;
+	width: 100%;
+	display: flex;
+	justify-content: end;
+	color: var(--color-btn);
+	height: 100px;
+	line-height: 100px;
+	box-shadow: var(--value-shadow);
+	border-radius: 10px;
+	margin-bottom: 12px;
+	padding: 0 20px;
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+.calculator .buttons span{
+	z-index: 9;
+	position: relative;
+	padding: 10px;
+	box-shadow: var(--calc-btn-shadow);
+	margin: 10px;
+	cursor: pointer;
+	user-select: none;
+	min-height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2em;
+	color: #000;
+	border: 2px solid #edf1f4;
+	border-radius: 10px;
+}
+
+.calculator .buttons span:active{
+	box-shadow: var(--value-shadow);
+	color: #000;
+}
+
+.calculator .buttons span#clear{
+	grid-column: span 2;
+}
+
+.calculator .buttons span#plus{
+	grid-row: span 2;
+}
+
+.toggleBtn{
+	z-index: 9;
+	position: fixed;
+	top: 20px; right: 20px;
+	width: 50px; height: 50px;
+	border-radius: 50%;
+	background-image: url('../img/halloween/calabaza.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	cursor: pointer;
+	border: 2px solid #edf1f4;
+	box-shadow: var(--toggle-shadow);
+}
+
+@media (max-width: 800px){
+	.calculator{
+		right: 0;
+	}
+
+	.screenSnow{
+		z-index: -999;
+		object-fit: cover;
+		transition: 3s ease;
+	}
+
+	.snowman{
+		position: absolute;
+		overflow: hidden;
+		display: none;
+	}
+}
+
+@media (max-width: 375px){
+	.toggleBtn{
+		z-index: 8;
+		top: 5px; 
+		right: 5px;
+	}
+}

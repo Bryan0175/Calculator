@@ -1,0 +1,206 @@
+.dark{
+	background: #0b061f;
+}
+
+.dark .bannerHalloween{
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dark .bannerChristmas{
+	position: absolute;
+	overflow: hidden;
+	display: none;
+}
+
+.bannerHalloween img{
+	z-index: 2; 
+	position: absolute;
+}
+
+.dark .bannerHalloween h2{
+	font-size: clamp(8rem, 3vw, 4rem); 
+	margin-bottom: 46rem;
+}
+
+.dark .spider{
+	top: 0;
+	z-index: 6 !important;
+	animation: animateSpider 15s ease-in-out infinite;
+}
+
+@keyframes animateSpider 
+{
+	0%,100%
+	{
+		transform: translateY(-500px);
+	}
+	50% 
+	{
+		transform: translateY(-425px);
+	}
+}
+
+.dark .ghost{
+	position: absolute;
+	top: 100px;
+	right: 100px;
+	width: 300px; height: 300px;
+	animation: animatePumpkin 5s ease-in-out infinite;
+}
+
+.dark .pumpkin02{
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	scale: 0.5;
+	animation: animatePumpkin 4s ease-in-out infinite;
+}
+
+@keyframes animatePumpkin {
+	0%,100% 
+	{
+		transform: translateY(-50px);
+	}
+	50% 
+	{
+		transform: translateY(50px);
+	}
+}
+
+.dark .spiderWeb{
+	z-index: 1;
+	position: absolute;
+	width: 100%; height: 100%;
+	object-fit: cover;
+	mix-blend-mode: screen;
+}
+
+.dark h2
+{
+	position: relative;
+	font-weight: 100;
+	display: flex;
+    color: #0e3742;
+    text-shadow: none;
+    animation: animate 5s infinite linear;
+}
+
+@keyframes animate 
+{
+    0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%
+    {
+		color: rgba(255, 255, 255, 0.1);
+		text-shadow: none;
+    }
+    18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%
+    {
+		color: #ffac09;
+		text-shadow: 0 0 10px #ffac09,
+		0 0 20px #ffac09,
+		0 0 40px #ffac09,
+		0 0 80px #ffac09,
+		0 0 160px #ffac09;
+    }
+}
+
+.dark .calculator{
+	z-index: 5;
+	background: #e18200;
+	/*background: var(--bgdark-calc);*/
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 1),
+	-7px -7px 20px rgba(229, 126, 46, 1);
+}
+
+/*rgba(229, 126, 46, .1)/rgba(255,255,255,.6)*/
+
+.dark .calculator .buttons h2#value{
+	background: #0b061f;
+	color: #ffac09 !important;
+	box-shadow: inset 15px 15px 20px rgba(0, 0, 0, .5),
+	inset -15px -15px 20px rgba(255,255,255,.1)
+}
+
+.dark .calculator .buttons span{
+	color: #fff;
+	border: 2px solid #333;
+	background: #1a152f;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, .9),
+	-5px -5px 10px rgba(255,255,255,.1);
+}
+
+.dark .calculator .buttons span:active{
+	box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 1),
+	inset -5px -5px 10px rgba(255,255,255,.1);
+}
+
+.dark .toggleBtn{
+	z-index: 7;
+	box-shadow:5px 5px 10px rgba(0, 0, 0, .25),
+	-5px -5px 10px rgba(255,255,255,.25);
+	background-image: url('../img/christmas/copo.jpg');
+	background-repeat: no-repeat;
+	background-size: 5.9rem;
+	background-position: center center;
+}
+
+@media (max-width: 600px){
+
+
+	.dark .bannerHalloween h2{
+		font-size: 6rem; 
+		margin-bottom: 47rem;
+	}
+
+	.dark .ghost{
+		position: absolute;
+		top: 60px;
+		right: 100px;
+		animation: animatePumpkin 6s ease-in-out infinite;
+		transition: .6 ease;
+	}
+
+	.dark .pumpkin02{
+		position: absolute;
+		top: 36rem;
+		right: 50px;
+		scale: 0.5;
+		animation: animatePumpkin 4s ease-in-out infinite;
+		transition: .6 ease;
+	}
+
+	@keyframes animatePumpkin {
+		0%,100% 
+		{
+			transform: translateY(-50px);
+		}
+		50% 
+		{
+			transform: translateY(50px);
+		}
+	}
+}
+
+@media (max-width: 375px){
+	@keyframes animateSpider{
+		0%,100%
+		{
+			transform: translateY(-500px);
+		}
+		50% 
+		{
+			transform: translateY(-480px);
+		}
+	}
+
+	.dark .toggleBtn{
+		z-index: 8;
+		top: 5px; 
+		right: 5px;
+	}
+}
